@@ -45,3 +45,45 @@ main {
 .home > button {
   font-size: 35px;
 }
+
+.quiz {
+  background-color: rgba(240, 248, 255, 0.871);
+  width: 100%;
+}
+
+.quizObject {
+  margin: 30px;
+}
+
+.question {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.answers {
+  margin-top: 15px;
+  display: flex;
+  gap: 30px;
+  text-align: center;
+}
+
+.answer {
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+  width: max-content;
+}
+
+.checkBtn {
+  font-size: 20px;
+  display: block;
+  margin: 30px auto;
+  padding: 10px 15px;
+  background-color: #4D5A9E;
+  color: white;
+  font-weight: 400;
+  border-radius: 10px;
+  border: none;
+}
+
+
