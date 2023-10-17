@@ -2,12 +2,17 @@ import { useState, useEffect } from 'react'
 import he from 'he';
 import arrayShuffle from 'array-shuffle';
 import { v4 as uuidv4 } from 'uuid';
+import gif from '../loading.gif'
 
 export default function Quiz() {
   const [quizData, setQuizData] = useState([]);
   const [quizElements, setQuizElements] = useState([]);
   const [checked, setChecked] = useState(false)
   const [score, setScore] = useState(0)
+  const [round, setRound] = useState(0)
+
+
+
 
 
   useEffect(() => {
@@ -25,7 +30,7 @@ export default function Quiz() {
         });
         setQuizData(data);
       });
-  }, []);
+  }, [round]);
 
   useEffect(() => {
     if (quizData.length > 0) {
@@ -34,14 +39,14 @@ export default function Quiz() {
           <div className='quizObject' key={quizObject.id}>
             <div className='question'>{quizObject.question}</div>
             <div className='answers'>
-              {quizObject.answers.map(answer => (
+              {quizObject.answers.map(answer => ( 
                 <div
                   style={{ background: quizObject.user_choice === answer ? '#0088ff70' : 'initial' }}
                   onClick={() => setUserChoice(quizObject.id, answer)}
                   className='answer'
                   key={answer}
                 >
-                  {answer}
+                  {he.decode(answer)}
                 </div>
               ))}
             </div>
@@ -71,11 +76,11 @@ export default function Quiz() {
             <div className='answers'>
               {quizObject.answers.map(answer => (
                 <div
-                  style={{ background: answer === quizObject.correct_answer ? 'green' : answer === quizObject.user_choice ? 'red' : 'initial' }}
+                  style={{ background: answer === quizObject.correct_answer ? '#92D7A0' : answer === quizObject.user_choice ? '#F4D9D9' : 'initial' }}
                   className='answer'
                   key={answer}
                 >
-                  {answer}
+                  {he.decode(answer)}
                 </div>
               ))}
             </div>
@@ -87,18 +92,32 @@ export default function Quiz() {
   }
   
 
+  function startNewRound() {
+    setQuizData([])
+    setQuizElements([])
+    setChecked(false)
+    setScore(0)
+    setRound( prev => prev + 1)
+  }
+
   return (
-    <div className='quiz'>
-      {quizElements}
-      { !checked ?
-      <button onClick={checkAnswers} className='checkBtn'>
-        Check answers
-      </button> :
-    <div className="results">
-    <div className='score'>Your score : {score}</div>  
-    <button>New round</button>
+    <div className="quiz">
+      {quizData.length === 0 && (
+        <img id='gif' src={gif} alt="Your GIF"/>
+      )}
+      {quizData.length > 0 && quizElements}
+      {!checked ? (
+        <button onClick={checkAnswers} className="checkBtn">
+          Check answers
+        </button>
+      ) : (
+        <div className="results">
+          <div className="score">
+            You scored <span id="score">{score}/5 </span> correct answers
+          </div>
+          <button onClick={startNewRound}>New round</button>
+        </div>
+      )}
     </div>
-    }
-    </div>
-  );
+  );  
 }

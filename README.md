@@ -1,8 +1,19 @@
-# React + Vite
+# React Movie Quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is aimed at developing and solidifying my React skills. The app allows users to answer a series of quiz questions, check their answers, and keep track of their score. It also incorporates features such as fetching quiz data from an API, shuffling answer options, and rendering dynamic components.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fetches quiz questions from an external API and decodes HTML entities.
+- Shuffles answer options to avoid any bias.
+- Tracks user choices, calculates the score, and provides feedback accordingly.
+- Allows starting a new round to generate fresh quiz questions.
+- Renders attractive user interfaces using React components and CSS styling.
+
+## Technologies Used
+
+- React: Functional components, hooks (useState, useEffect), and conditional rendering.
+- HTML and CSS: Structuring and styling the user interface.
+- Fetch API: Retrieving quiz data from an external source.
+- he Library: Decoding HTML entities in the quiz questions.
+- array-shuffle Library: Shuffling answer options for better user experience.

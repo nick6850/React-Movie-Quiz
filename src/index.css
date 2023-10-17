@@ -35,15 +35,28 @@ main {
 }
 
 .home > h1 {
-  font-size: 60px;
+  font-size: 50px;
+  background: #6E227D;
+  background: linear-gradient(to right, #6E227D 30%, #0910BA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 
+
 .home > .description {
-  font-size: 40px;
+  padding-top: 35px;
+  font-size: 35px;
+  color: #0910BA;
+  font-weight: 300;
 }
 
 .home > button {
+  padding: 5px 30px;
+  background-color: #010322;
   font-size: 35px;
+  color: aliceblue;
+  border-radius: 10px;
 }
 
 .quiz {
@@ -65,25 +78,68 @@ main {
   display: flex;
   gap: 30px;
   text-align: center;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .answer {
+  border: 1px gainsboro solid;
   background-color: white;
   padding: 5px 15px;
   border-radius: 10px;
   width: max-content;
+  height: min-content;
+  cursor: grab;
 }
+
+.answer:hover {
+  background-color: gray;
+}
+
 
 .checkBtn {
   font-size: 20px;
   display: block;
-  margin: 30px auto;
-  padding: 10px 15px;
-  background-color: #4D5A9E;
+  margin: 50px auto;
+  padding: 10px 20px;
+  background-color: #010322;
   color: white;
-  font-weight: 400;
+  font-weight: 450;
   border-radius: 10px;
   border: none;
 }
 
 
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+#score {
+  font-weight: 550;
+}
+
+.results > button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: #010322;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+
+button:hover{
+  background-color: #090fbad0;
+  cursor: grab;
+}
+
+#gif {
+  width: 150px;
+  display: block;
+  margin: 80px auto;
+}
