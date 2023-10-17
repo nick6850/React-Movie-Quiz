@@ -14,6 +14,6 @@ This project is aimed at developing and solidifying my React skills. The app all
 
 - React: Functional components, hooks (useState, useEffect), and conditional rendering.
 - HTML and CSS: Structuring and styling the user interface.
-- Fetch API: Retrieving quiz data from an external source.
+- Fetch API: Retrieving quiz data from an external source (OpenTrivia API).
 - he Library: Decoding HTML entities in the quiz questions.
 - array-shuffle Library: Shuffling answer options for better user experience.
